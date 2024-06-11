@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { useAppSelector } from "../../app/hooks"
 import { selectIsAuthentificated } from "../../features/user/userSlice"
-import { Box } from "@mui/material"
 import LoginFrom from "../../components/loginForm"
 import RegisterForm from "../../components/registerForm"
 
@@ -20,15 +19,13 @@ const Auth = () => {
     setLoginOrRegister(loginOrRegister === "login" ? "register" : "login")
   }
   return (
-    <Box
-      sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}
-    >
+    <div className="flex flex-col items-center">
       {loginOrRegister === "login" ? (
         <LoginFrom toggleLoginOrRegister={toggleLoginOrRegister} />
       ) : (
         <RegisterForm toggleLoginOrRegister={toggleLoginOrRegister} />
       )}
-    </Box>
+    </div>
   )
 }
 
