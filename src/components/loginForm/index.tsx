@@ -45,7 +45,7 @@ const LoginFrom: React.FC<Props> = ({ toggleLoginOrRegister }) => {
   }
   return (
     <form
-      className="flex flex-col items-center w-[100%] sm:w-96 gap-5 mt-10"
+      className="flex flex-col items-center w-96 max-sm:w-[90%] gap-5 mt-10"
       onSubmit={handleSubmit(onSubmitHandler)}
     >
       <p className="text-6xl font-bold">Вход</p>
@@ -78,6 +78,7 @@ const LoginFrom: React.FC<Props> = ({ toggleLoginOrRegister }) => {
           color="default"
           type="button"
           variant="ghost"
+          className="max-sm:text-xs"
         >
           Создать аккаунт
         </Button>

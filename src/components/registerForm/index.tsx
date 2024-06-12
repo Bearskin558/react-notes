@@ -43,10 +43,10 @@ const RegisterForm: React.FC<Props> = ({ toggleLoginOrRegister }) => {
   }
   return (
     <form
-      className="flex flex-col items-center w-96 gap-5 mt-10"
+      className="flex flex-col items-center w-96 max-sm:w-[90%] gap-5 mt-10"
       onSubmit={handleSubmit(registerHandler)}
     >
-      <p className="text-6xl font-bold">Регистрация</p>
+      <p className="text-6xl max-sm:text-5xl font-bold">Регистрация</p>
       <Input
         {...register("email", { required: "Введите email" })}
         placeholder="email"
@@ -56,6 +56,7 @@ const RegisterForm: React.FC<Props> = ({ toggleLoginOrRegister }) => {
         errorMessage={errors.email?.message}
         isInvalid={Boolean(errors.email)}
         endContent={<MdOutlineEmail size={25} />}
+        label="email"
       />
       <Input
         {...register("name", { required: "Введите имя" })}
@@ -66,6 +67,7 @@ const RegisterForm: React.FC<Props> = ({ toggleLoginOrRegister }) => {
         errorMessage={errors.name?.message}
         isInvalid={Boolean(errors.name)}
         endContent={<FaRegUser size={25} />}
+        label="name"
       />
 
       <Input
@@ -77,6 +79,7 @@ const RegisterForm: React.FC<Props> = ({ toggleLoginOrRegister }) => {
         errorMessage={errors.password?.message}
         isInvalid={Boolean(errors.password)}
         endContent={<IoKeyOutline size={25} />}
+        label="password"
       />
       {error && <p className="text-danger">{error}</p>}
       {isSuccess && (
@@ -88,10 +91,16 @@ const RegisterForm: React.FC<Props> = ({ toggleLoginOrRegister }) => {
           color="default"
           type="button"
           variant="ghost"
+          className="max-sm:text-xs"
         >
           Уже есть аккаунт?
         </Button>
-        <Button isLoading={isLoading} color="primary" type="submit">
+        <Button
+          isLoading={isLoading}
+          color="primary"
+          type="submit"
+          className="max-w-44"
+        >
           Зарегистрироваться
         </Button>
       </div>
