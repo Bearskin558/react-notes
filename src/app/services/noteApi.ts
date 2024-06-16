@@ -25,7 +25,7 @@ export const noteApi = api.injectEndpoints({
       }),
     }),
     getAllNotes: builder.query<Note[], void>({
-      query: params => ({
+      query: () => ({
         url: `/notes`,
         method: "GET",
       }),

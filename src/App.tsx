@@ -1,9 +1,9 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom"
 
-import Layout from "./components/layout"
-import Auth from "./pages/auth"
-import Notes from "./pages/notes"
-import Trash from "./pages/trash"
+import Layout from "./components/Layout"
+import Auth from "./pages/Auth"
+import Notes from "./pages/Notes"
+import Trash from "./pages/Trash"
 
 const router = createBrowserRouter([
   {
